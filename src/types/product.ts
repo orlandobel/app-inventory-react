@@ -13,10 +13,10 @@ export interface Product {
   updatedAt: Date;
 }
 
-export interface ProductFilter {
+export type ProductFilter = Partial<{
   name?: string;
   category?: string;
   supplierId?: string;
   sku?: string;
   lowStock?: boolean;
-}
+}>;

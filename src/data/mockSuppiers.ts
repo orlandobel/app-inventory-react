@@ -1,0 +1,48 @@
+import type { Supplier } from "@/types/suppliers";
+
+export const mockSuppliers: Supplier[] = [
+  {
+    id: 'supplier-1',
+    name: 'TechGlobal Solutions',
+    contactPerson: 'Maria Rodriguez',
+    email: 'maria.rodriguez@techglobal.com',
+    phone: '+1-555-0123',
+    address: '1234 Technology Blvd',
+    city: 'San Francisco',
+    country: 'USA',
+    createdAt: new Date('2023-01-15'),
+  },
+  {
+    id: 'supplier-2',
+    name: 'Office Depot Mexico',
+    contactPerson: 'Carlos Mendoza',
+    email: 'carlos.mendoza@officedepot.mx',
+    phone: '+52-667-555-0456',
+    address: 'Av. Insurgentes 2456',
+    city: 'Culiacán',
+    country: 'Mexico',
+    createdAt: new Date('2023-02-20'),
+  },
+  {
+    id: 'supplier-3',
+    name: 'CleanPro Supplies',
+    contactPerson: 'Ana Gutierrez',
+    email: 'ana.gutierrez@cleanpro.com',
+    phone: '+52-33-555-0789',
+    address: 'Calle Limpieza 789',
+    city: 'Guadalajara',
+    country: 'Mexico',
+    createdAt: new Date('2023-03-10'),
+  },
+  {
+    id: 'supplier-4',
+    name: 'FurnitureMax International',
+    contactPerson: 'David Chen',
+    email: 'david.chen@furnituremax.com',
+    phone: '+86-21-555-0321',
+    address: '567 Manufacturing District',
+    city: 'Shanghai',
+    country: 'China',
+    createdAt: new Date('2023-04-05'),
+  },
+];
