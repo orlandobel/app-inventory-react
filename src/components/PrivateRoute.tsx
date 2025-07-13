@@ -1,6 +1,6 @@
-import { Navigate, Outlet } from "react-router";
+import { Navigate } from "react-router";
 import { useAuth } from "@/context/AuthContextHook";
-
+import Layout from "@/components/Layout";
 const PrivateRoute = () => {
     const { isAuthenticated, isLoading } = useAuth();
 
@@ -8,7 +8,7 @@ const PrivateRoute = () => {
         return <div>Cargando...</div>; //más adelante un <SplashScreen />
     }
 
-    return isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />;
+    return isAuthenticated ? <Layout /> : <Navigate to="/login" replace />;
 }
 
 export default PrivateRoute;

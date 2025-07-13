@@ -9,6 +9,7 @@ export interface Product {
   minimumStock: number;
   unitPrice: number;  // Selling price to customers
   costPrice: number;  // What we pay to suppliers
+  imgSource: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -18,5 +19,17 @@ export type ProductFilter = Partial<{
   category?: string;
   supplierId?: string;
   sku?: string;
-  lowStock?: boolean;
 }>;
+
+
+export interface ProductQueryResult {
+  products: Product[];
+  total: number;
+  totalPages: number;
+  currentPage: number;
+}
+
+export interface ProductQueryParams {
+  searchTerm?: string;
+  page?: number;
+}

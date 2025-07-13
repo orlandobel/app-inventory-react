@@ -1,0 +1,93 @@
+.orders {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background-color: #fff;
+  color: #222;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.orders--dark {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+.orders__title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.orders__subtitle {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.orders--dark .orders__subtitle {
+  color: #aaa;
+}
+
+.orders__create-button {
+  display: block;
+  margin: 0 0 2rem auto;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.orders__loading {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 2rem 0;
+}
+
+.orders__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.order-card {
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  background-color: #fafafa;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.order-card--dark {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+
+.order-card__id {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.order-card__status,
+.order-card__supplier,
+.order-card__date,
+.order-card__expected,
+.order-card__actual,
+.order-card__total,
+.order-card__notes {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.orders--dark .order-card__status,
+.orders--dark .order-card__supplier,
+.orders--dark .order-card__date,
+.orders--dark .order-card__expected,
+.orders--dark .order-card__actual,
+.orders--dark .order-card__total,
+.orders--dark .order-card__notes {
+  color: #ccc;
+}

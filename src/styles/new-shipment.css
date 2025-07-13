@@ -1,0 +1,127 @@
+.new-shipment {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.05);
+}
+
+.new-shipment__title {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.new-shipment__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.new-shipment__field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.new-shipment__field input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.6rem;
+  font-size: 1.4rem;
+}
+
+.new-shipment__section-title {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+}
+
+.new-shipment__product-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.new-shipment__product-row input {
+  flex: 1;
+}
+
+.new-shipment__add-btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.product-row__btn {
+  font-size: 2rem;
+  padding: 0.2rem 0.8rem;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.product-row__btn--add {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.product-row__btn--remove {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.new-shipment__submit {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.new-shipment__error {
+  color: #e74c3c;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.new-shipment--dark {
+  background-color: #1e1e1e !important;
+  color: #f0f0f0;
+  border: 1px solid #aaa;
+}
+
+.new-shipment--dark input {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+.new-shipment--dark .new-shipment__submit {
+  background-color: #2980b9;
+}
+
+.new-shipment--dark .product-row__btn--add {
+  background-color: #27ae60;
+}
+
+.new-shipment--dark .product-row__btn--remove {
+  background-color: #c0392b;
+}
+
+.new-shipment--dark input,
+.new-shipment--dark textarea,
+.new-shipment--dark select {
+  border: 1px solid #ccc; /* Borde claro en inputs */
+}
+
+.new-shipment--dark .product-row {
+  border: 1px solid #999; /* Borde claro para cada fila de producto */
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #2b2b2b;
+}

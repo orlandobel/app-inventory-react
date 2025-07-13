@@ -15,6 +15,7 @@ export const mockProducts: Product[] = [
     costPrice: 45.00,
     createdAt: new Date('2023-05-01'),
     updatedAt: new Date('2023-12-15'),
+    imgSource: 'https://picsum.photos/300?random=1',
   },
   {
     id: 'product-2',
@@ -29,6 +30,7 @@ export const mockProducts: Product[] = [
     costPrice: 8.50,
     createdAt: new Date('2023-05-01'),
     updatedAt: new Date('2024-01-10'),
+    imgSource: 'https://picsum.photos/300?random=2',
   },
   {
     id: 'product-3',
@@ -43,6 +45,7 @@ export const mockProducts: Product[] = [
     costPrice: 12.75,
     createdAt: new Date('2023-05-01'),
     updatedAt: new Date('2024-01-05'),
+    imgSource: 'https://picsum.photos/300?random=3',
   },
   // Office Supplies from Office Depot
   {
@@ -58,6 +61,7 @@ export const mockProducts: Product[] = [
     costPrice: 4.50,
     createdAt: new Date('2023-05-15'),
     updatedAt: new Date('2023-11-20'),
+    imgSource: 'https://picsum.photos/300?random=4',
   },
   {
     id: 'product-5',
@@ -72,6 +76,7 @@ export const mockProducts: Product[] = [
     costPrice: 3.25,
     createdAt: new Date('2023-05-15'),
     updatedAt: new Date('2023-12-01'),
+    imgSource: 'https://picsum.photos/300?random=5',
   },
   {
     id: 'product-6',
@@ -86,6 +91,7 @@ export const mockProducts: Product[] = [
     costPrice: 6.75,
     createdAt: new Date('2023-05-15'),
     updatedAt: new Date('2023-10-12'),
+    imgSource: 'https://picsum.photos/300?random=6',
   },
   {
     id: 'product-7',
@@ -100,6 +106,7 @@ export const mockProducts: Product[] = [
     costPrice: 7.25,
     createdAt: new Date('2023-05-15'),
     updatedAt: new Date('2023-09-18'),
+    imgSource: 'https://picsum.photos/300?random=7',
   },
   // Cleaning from CleanPro
   {
@@ -115,6 +122,7 @@ export const mockProducts: Product[] = [
     costPrice: 2.15,
     createdAt: new Date('2023-06-01'),
     updatedAt: new Date('2023-12-10'),
+    imgSource: 'https://picsum.photos/300?random=8',
   },
   {
     id: 'product-9',
@@ -129,6 +137,7 @@ export const mockProducts: Product[] = [
     costPrice: 5.50,
     createdAt: new Date('2023-06-01'),
     updatedAt: new Date('2024-01-08'),
+    imgSource: 'https://picsum.photos/300?random=9',
   },
   {
     id: 'product-10',
@@ -143,6 +152,7 @@ export const mockProducts: Product[] = [
     costPrice: 8.25,
     createdAt: new Date('2023-06-01'),
     updatedAt: new Date('2023-11-25'),
+    imgSource: 'https://picsum.photos/300?random=10',
   },
   // Furniture from FurnitureMax
   {
@@ -158,6 +168,7 @@ export const mockProducts: Product[] = [
     costPrice: 120.00,
     createdAt: new Date('2023-06-15'),
     updatedAt: new Date('2023-12-20'),
+    imgSource: 'https://picsum.photos/300?random=11',
   },
   {
     id: 'product-12',
@@ -172,6 +183,7 @@ export const mockProducts: Product[] = [
     costPrice: 85.00,
     createdAt: new Date('2023-06-15'),
     updatedAt: new Date('2024-01-12'),
+    imgSource: 'https://picsum.photos/300?random=12',
   },
   {
     id: 'product-13',
@@ -186,6 +198,7 @@ export const mockProducts: Product[] = [
     costPrice: 52.00,
     createdAt: new Date('2023-06-15'),
     updatedAt: new Date('2023-10-30'),
+    imgSource: 'https://picsum.photos/300?random=13',
   },
   // Additional Electronics
   {
@@ -201,6 +214,7 @@ export const mockProducts: Product[] = [
     costPrice: 22.50,
     createdAt: new Date('2023-07-01'),
     updatedAt: new Date('2023-11-15'),
+    imgSource: 'https://picsum.photos/300?random=14',
   },
   {
     id: 'product-15',
@@ -215,6 +229,7 @@ export const mockProducts: Product[] = [
     costPrice: 15.75,
     createdAt: new Date('2023-07-01'),
     updatedAt: new Date('2024-01-03'),
+    imgSource: 'https://picsum.photos/300?random=15',
   },
   // Additional Office Supplies
   {
@@ -230,6 +245,7 @@ export const mockProducts: Product[] = [
     costPrice: 10.50,
     createdAt: new Date('2023-07-10'),
     updatedAt: new Date('2023-12-05'),
+    imgSource: 'https://picsum.photos/300?random=16',
   },
   {
     id: 'product-17',
@@ -244,6 +260,7 @@ export const mockProducts: Product[] = [
     costPrice: 6.95,
     createdAt: new Date('2023-07-10'),
     updatedAt: new Date('2023-09-22'),
+    imgSource: 'https://picsum.photos/300?random=17',
   },
   // Additional Cleaning
   {
@@ -259,5 +276,6 @@ export const mockProducts: Product[] = [
     costPrice: 3.75,
     createdAt: new Date('2023-07-20'),
     updatedAt: new Date('2023-11-30'),
+    imgSource: 'https://picsum.photos/300?random=18',
   },
 ];

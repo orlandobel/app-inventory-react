@@ -1,7 +1,8 @@
-import React, { useReducer, useEffect, type ReactNode } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import type { AuthState, LoginCredentials, AuthAction, AuthContextValue } from "../types/auth";
 import { mockUser } from "../data/mockUsers"
 import { AuthContext } from "./AuthContextHook"
+import type { ComponentLayout } from '@/types/Component';
 // Mock credentials
 const validCredentials = {
   username: 'admin',
@@ -50,12 +51,7 @@ const initialState: AuthState = {
   isLoading: true, // Start with loading to check for existing session
 };
 
-// Auth provider component
-interface AuthProviderProps {
-  children: ReactNode;
-}
-
-export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+export const AuthProvider: React.FC<ComponentLayout> = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
   // Check for existing session on mount

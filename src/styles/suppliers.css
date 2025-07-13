@@ -1,0 +1,77 @@
+/* suppliers.css */
+.suppliers {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background-color: #fff;
+  color: #222;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.suppliers--dark {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+.suppliers__title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.suppliers__subtitle {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.suppliers--dark .suppliers__subtitle {
+  color: #aaa;
+}
+
+.suppliers__loading {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 2rem 0;
+}
+
+.suppliers__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.supplier-card {
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  background-color: #fafafa;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.supplier-card--dark {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+
+.supplier-card__name {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.supplier-card__contact,
+.supplier-card__email,
+.supplier-card__phone,
+.supplier-card__address,
+.supplier-card__created {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.suppliers--dark .supplier-card__contact,
+.suppliers--dark .supplier-card__email,
+.suppliers--dark .supplier-card__phone,
+.suppliers--dark .supplier-card__address,
+.suppliers--dark .supplier-card__created {
+  color: #ccc;
+}
