@@ -33,3 +33,10 @@ export interface ProductQueryParams {
   searchTerm?: string;
   page?: number;
 }
+
+export interface ProductSearchFilters {
+  name?: string;
+  category?: string;
+  supplierId?: string;
+  sku?: string;
+}

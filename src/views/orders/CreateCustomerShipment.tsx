@@ -70,9 +70,14 @@ const NewShipment = () => {
       totalAmount,
     };
 
-    await createCustomerShipment(newShipment);
-    navigate("/shipments");
+    try {
+      await createCustomerShipment(newShipment);
+      navigate("/shipments"); // redirige al listado de envíos
+    } catch (err) {
+      setFormError(`No se pudo crear el envío: ${err}`);
+    }
   };
+
 
   return (
     <div className={`new-shipment ${theme === "dark" ? "new-shipment--dark" : ""}`}>

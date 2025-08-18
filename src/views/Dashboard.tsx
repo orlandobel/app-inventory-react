@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContextHook";
 import { usePreferences } from "@/context/PreferencesContextHook";
-import { getProducts } from "@/services/productsService";
+import { getProducts, searchProducts } from "@/services/productsService";
+import ProductsSearchForm from "@/views/products/ProductSearchForm";
 import type { Product } from "@/types/product";
 import "@/styles/dasboard.css";
 
@@ -14,13 +15,38 @@ const Dashboard: React.FC = () => {
   const [offset, setOffset] = useState(0);
   const [hasMore, setHasMore] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const [isSearchMode, setIsSearchMode] = useState(false);
   const limit = 4;
 
   const loadProducts = async (reset = false) => {
     setIsLoading(true);
     const currentOffset = reset ? 0 : offset;
+    
     const { products: newProducts, hasMore: more } = await getProducts(
-      searchTerm,
+      currentOffset,
+      limit
+    );
+
+    setProducts(reset ? newProducts : [...products, ...newProducts]);
+    setOffset(currentOffset + limit);
+    setHasMore(more);
+    setIsLoading(false);
+  };
+
+  const searchProductsWithTerm = async (reset = false) => {
+    setIsLoading(true);
+    const currentOffset = reset ? 0 : offset;
+    
+    // Create filters object - send search term to all fields for OR search
+    const filters = {
+      name: searchTerm,
+      category: searchTerm,
+      supplierId: searchTerm,
+      sku: searchTerm
+    };
+
+    const { products: newProducts, hasMore: more } = await searchProducts(
+      filters,
       currentOffset,
       limit
     );
@@ -34,7 +60,23 @@ const Dashboard: React.FC = () => {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     setOffset(0);
-    loadProducts(true); // Reset lista
+    setIsSearchMode(true);
+    searchProductsWithTerm(true);
+  };
+
+  const clearSearch = () => {
+    setSearchTerm("");
+    setOffset(0);
+    setIsSearchMode(false);
+    loadProducts(true);
+  };
+
+  const loadMore = () => {
+    if (isSearchMode) {
+      searchProductsWithTerm();
+    } else {
+      loadProducts();
+    }
   };
 
   useEffect(() => {
@@ -46,18 +88,13 @@ const Dashboard: React.FC = () => {
       <h1 className="dashboard__title">Bienvenido, {user?.username}</h1>
       <p className="dashboard__subtitle">Rol: {user?.role}</p>
 
-      <form onSubmit={handleSearch} className="dashboard__search-form">
-        <input
-          type="text"
-          placeholder="Buscar por nombre o SKU..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="dashboard__search-input"
-        />
-        <button type="submit" className="dashboard__search-button">
-          Buscar
-        </button>
-      </form>
+      <ProductsSearchForm
+        searchTerm={searchTerm}
+        onSearchTermChange={setSearchTerm}
+        onSubmit={handleSearch}
+        onClear={clearSearch}
+        isSearchMode={isSearchMode}
+      />
 
       <div className="dashboard__products">
         {products.map((product) => (
@@ -88,7 +125,7 @@ const Dashboard: React.FC = () => {
       {isLoading && <p className="dashboard__loading">Cargando productos...</p>}
 
       {!isLoading && hasMore && (
-        <button className="dashboard__load-more" onClick={() => loadProducts()}>
+        <button className="dashboard__load-more" onClick={loadMore}>
           Mostrar más
         </button>
       )}

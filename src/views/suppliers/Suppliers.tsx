@@ -11,13 +11,29 @@ const Suppliers: React.FC = () => {
 
   const [suppliers, setSuppliers] = useState<Supplier[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    setIsLoading(true);
-    getSuppliers().then((data) => {
-      setSuppliers(data);
-      setIsLoading(false);
-    });
+    const fetchSuppliers = async () => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const data = await getSuppliers();
+        // Convert createdAt strings to Date objects
+        const transformed = data.map((s) => ({
+          ...s,
+          createdAt: new Date(s.createdAt),
+        }));
+        setSuppliers(transformed);
+      } catch (err) {
+        console.error(err);
+        setError("Error al cargar proveedores. Por favor, intenta de nuevo.");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchSuppliers();
   }, []);
 
   return (
@@ -26,6 +42,11 @@ const Suppliers: React.FC = () => {
       <p className="suppliers__subtitle">Usuario: {user?.username}</p>
 
       {isLoading && <p className="suppliers__loading">Cargando proveedores…</p>}
+      {error && <p className="suppliers__error">{error}</p>}
+
+      {!isLoading && !error && suppliers.length === 0 && (
+        <p className="suppliers__empty">No hay proveedores disponibles.</p>
+      )}
 
       <ul className="suppliers__list">
         {suppliers.map((s) => (
@@ -43,7 +64,7 @@ const Suppliers: React.FC = () => {
               {s.address}, {s.city}, {s.country}
             </p>
             <p className="supplier-card__created">
-              Creado: {s.createdAt.toLocaleDateString()}
+              Creado: {s.createdAt.toLocaleDateString("es-MX")}
             </p>
           </li>
         ))}
