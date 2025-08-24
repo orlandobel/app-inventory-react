@@ -1,6 +1,6 @@
 import type { CustomerShipment } from "@/types/order";
 
-const API_BASE_URL = "http://localhost:8080";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
 const SHIPMENTS_ENDPOINT = `${API_BASE_URL}/api/shipments`;
 
 // Transformación de fechas y números para JS

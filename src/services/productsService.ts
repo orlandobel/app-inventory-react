@@ -1,7 +1,9 @@
 import type { Product, ProductSearchFilters } from "@/types/product";
 
 const DEFAULT_LIMIT = 6;
-const API_URL = "http://localhost:8080/api/products";
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
+const API_URL = `${API_BASE_URL}/api/products`;
 
 export const getProducts = async (
   offset = 0,
